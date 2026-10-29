@@ -1,0 +1,17 @@
+# Node.js
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+
+# Android Studio
+.gradle/
+.idea/
+build/
+local.properties
+*.iml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
