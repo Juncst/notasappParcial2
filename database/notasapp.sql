@@ -31,20 +31,8 @@ CREATE TABLE IF NOT EXISTS notas (
         ON DELETE CASCADE
 );
 
--- Usuarios de prueba
-INSERT INTO usuarios (nombre, email, password_hash)
-VALUES
-(
-    'Usuario Prueba',
-    'prueba@notasapp.local',
-    crypt('Notas2026!', gen_salt('bf', 12))
-),
-(
-    'José',
-    'jose@notasapp.local',
-    crypt('Notas2026!', gen_salt('bf', 12))
-)
-ON CONFLICT (email) DO NOTHING;
+-- Las cuentas se crean con backend/crearUsuario.js y credenciales del entorno.
+-- No se insertan usuarios ni contraseñas predeterminados.
 
 -- Verificar usuarios registrados
 SELECT id, nombre, email, fecha_creacion

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="22dp"
+    android:background="#F4F6FA">
+
+    <TextView
+        android:id="@+id/txtCrearTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear nota"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:textColor="#1B2845"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtTituloNota"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Título de la nota"
+        android:inputType="textCapSentences"
+        android:singleLine="true"
+        android:maxLength="200"
+        android:textColor="#1B2845"
+        android:textColorHint="#64748B"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/txtCrearTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/edtContenidoNota"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:hint="Escribe el contenido de tu nota"
+        android:gravity="top|start"
+        android:inputType="textMultiLine|textCapSentences"
+        android:textColor="#1B2845"
+        android:textColorHint="#64748B"
+        android:layout_marginTop="22dp"
+        app:layout_constraintTop_toBottomOf="@id/edtTituloNota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnGuardarNota"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Guardar nota"
+        android:backgroundTint="#3159B8"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@id/edtContenidoNota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progresoGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/btnGuardarNota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnVolverCrear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:backgroundTint="#64748B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

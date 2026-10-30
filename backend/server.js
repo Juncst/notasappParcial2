@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: require('node:path').join(__dirname, '.env'), quiet: true });
 
 const express = require('express');
 const authRoutes = require('./routes/auth');
@@ -25,7 +25,22 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/notas', notasRoutes);
 
-// Iniciar servidor
-app.listen(PORT, () => {
-    console.log(`Servidor iniciado en http://localhost:${PORT}`);
+app.use((error, req, res, next) => {
+    if (error.type === 'entity.parse.failed') {
+        return res.status(400).json({ mensaje: 'El cuerpo debe ser JSON válido' });
+    }
+    if (error.type === 'entity.too.large') {
+        return res.status(413).json({ mensaje: 'La petición es demasiado grande' });
+    }
+    console.error('Error interno al procesar la petición');
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
 });
+
+// Importar la app permite probar las rutas sin ocupar el puerto de desarrollo.
+if (require.main === module) {
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Servidor iniciado en http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;

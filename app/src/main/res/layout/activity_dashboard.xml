@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="26dp"
+    android:background="#F4F6FA">
+
+    <TextView
+        android:id="@+id/txtBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:textColor="#1B2845"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mis notas personales"
+        android:textSize="16sp"
+        android:textColor="#64748B"
+        android:layout_marginBottom="36dp" />
+
+    <Button
+        android:id="@+id/btnCrearNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3159B8"
+        android:text="Crear nota" />
+
+    <Button
+        android:id="@+id/btnConsultarNotas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3159B8"
+        android:text="Consultar notas"
+        android:layout_marginTop="14dp" />
+
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#64748B"
+        android:text="Cerrar sesión"
+        android:layout_marginTop="28dp" />
+</LinearLayout>

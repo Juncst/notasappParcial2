@@ -7,7 +7,7 @@ const router = express.Router();
 // Crear una nota
 router.post('/', verificarToken, async (req, res) => {
 
-    const { titulo, contenido } = req.body;
+    const { titulo, contenido } = req.body || {};
 
     if (
         typeof titulo !== 'string' ||
